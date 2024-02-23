@@ -1,8 +1,8 @@
 
 # Mysterious Projections: Multimodal LLMs Gain Domain-Specific Visual Capabilities *Without* Richer Cross-Modal Projections   
 *Paper*: [https://arxiv.org/abs/2402.NNNNN](https://arxiv.org/abs/2402.NNNNN)  
-*Webpage*: [https://claws-lab.github.io/mllm_projections/](https://claws-lab.github.io/mllm_projections/)  
-*GitHub*: [https://github.com/claws-lab/mllm_projections](https://github.com/claws-lab/mllm_projections)   
+*Webpage*: [https://claws-lab.github.io/projection-in-MLLMs/](https://claws-lab.github.io/projection-in-MLLMs/)  
+*GitHub*: [https://github.com/claws-lab/projection-in-MLLMs](https://github.com/claws-lab/projection-in-MLLMs/)   
 
 *Authors*:
 [Gaurav Verma](https://gaurav22verma.github.io/)<sup>1</sup>, 
