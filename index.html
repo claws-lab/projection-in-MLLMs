@@ -1,0 +1,292 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	
+	h1 {
+		font-size:32px;
+		font-weight:300;
+	}
+	
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		15px 15px 0 0px #fff, /* The fourth layer */
+		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		20px 20px 0 0px #fff, /* The fifth layer */
+		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		25px 25px 0 0px #fff, /* The fifth layer */
+		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+
+	.slider-container {
+		max-width: 690px;
+		margin: auto;
+		display: flex; /* Use flexbox for layout */
+		align-items: center; /* Vertically center buttons */
+	}
+
+	.slide {
+		display: none;
+	}
+
+	.active {
+		display: block;
+	}
+
+	.prev, .next {
+		cursor: pointer;
+		padding: 16px;
+		color: white;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.6s ease;
+		border-radius: 0 3px 3px 0;
+		user-select: none;
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	.prev:hover, .next:hover {
+		background-color: rgba(0,0,0,0.8);
+	}
+
+
+</style>
+
+<html>
+<head>
+	<title>MLLM Projections</title>
+	<meta property="og:image" content="./assets/teaser.png"/> 
+	<meta property="og:title" content="Cross-modal Projection in Multimodal LLMs" />
+	<meta property="og:description" content="Paper title: Mysterious Projections: Multimodal LLMs Gain Domain-Specific Visual Capabilities Without Richer Cross-Modal Projections; Authors: Gaurav Verma, Minje Choi, Kartik Sharma, Jamelle Watson-Daniels, Sejoon Oh, Srijan Kumar; Affiliations: Georgia Institute of Technology" />
+
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script> 
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:36px">Mysterious Projections: Multimodal LLMs Gain Domain-Specific<br/> Visual Capabilities <em>Without</em> Richer Cross-Modal Projections</span><br/>
+		<span style="font-size:25px">[<a href="https://arxiv.org/abs/2402.NNNNN">Paper</a>] &nbsp;&nbsp; [<a href="https://github.com/claws-lab/mllm_projections">GitHub</a>]</span><br/><br/>
+		<span><a href="https://gaurav22verma.github.io/">Gaurav Verma</a><sup>1</sup>, 
+			<a href="https://minjechoi.github.io/">Minje Choi</a><sup>1</sup>, 
+			<a href="https://ksartik.github.io/">Kartik Sharma</a><sup>1</sup>,<br/>
+			  <a href="https://www.jamellewd.com/">Jamelle Watson-Daniels</a><sup>2</sup>,
+			  <a href="https://sejoonoh.github.io/">Sejoon Oh</a><sup>1</sup>,
+			 and <a href="https://faculty.cc.gatech.edu/~srijan/">Srijan Kumar</a><sup>1</sup>
+			</span><br/><br/>
+			<span><sup>1</sup>Georgia Institute of Technology, <sup>2</sup>Harvard University</span><br/>
+		<a href="https://www.cc.gatech.edu/"><img src="./assets/gt-logo.png" width=200px></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://seas.harvard.edu/"><img src="./assets/hrvd-logo.png" width=140px></a><br/><br/>
+
+
+	<hr><br/><br/>
+	<center>
+		<table align=center width=650px>
+			<tr>
+				<td width=260px>
+					<center>
+						<img class="round" style="width:650px" src="./assets/overview.png"/><br/><br/>
+					</center>
+						<b>Overview of our study</b>: While the MLLM's domain-specific visual capability can be improved using fine-tuning strategies, the domain-specific richness of the image's post-projection representation does not improve. Results indicate that domain-specific visual attributes are predominantly modeled by the LLM parameters (whether frozen or not) and the projection does not necessarily play a role in mapping visual attributes to the LLM space. Through this study, we offer a potential reinterpretation of the role of cross-modal projections in MLLMs.
+					<!-- </center> -->
+				</td>
+			</tr>
+		</table><br/><br/>
+
+		<hr>
+
+	</center>
+
+	<table align=center width=850px>
+		<center><h1>Technical Abstract</h1></center>
+		<tr>
+			<td>
+				Multimodal large language models (MLLMs) like LLaVA and GPT-4(V) enable general-purpose conversations about images with the language modality. As off-the-shelf MLLMs may have limited capabilities on images from domains like dermatology and agriculture, they must be fine-tuned to unlock domain-specific applications. The prevalent architecture of current open-source MLLMs comprises two major modules: an image-language (cross-modal) projection network and a large language model. It is desirable to understand the roles of these two modules in modeling domain-specific visual attributes to inform the design of future models and streamline the interpretability efforts on the current models. To this end, via experiments on $4$ datasets and under 2 fine-tuning settings, we find that as the MLLM is fine-tuned, it indeed gains domain-specific visual capabilities, but the updates do <em>not</em> lead to the projection extracting relevant domain-specific visual attributes. Our results indicate that the domain-specific visual attributes are modeled by the LLM, even when only the projection is fine-tuned. Through this study, we offer a potential reinterpretation of the role of cross-modal projections in MLLM architectures.
+			</td>
+		</tr>
+	</table>
+	<br>
+	<hr>
+
+
+	<center><h1>Annotated Key Results</h1>Use the next and previous sliders to go over the annotated version of our results and insights.<br/><br/></center>
+
+	<table align=center width=950px>
+		<center>
+			<tr>
+				<td>
+					<center><div id="counter"></div></center><br/>
+					<div class="slider-container">
+						<button class="prev" onclick="plusSlides(-1)">&#10094;</button>  &nbsp;&nbsp;&nbsp;
+						
+						<div class="slide active">
+							<img src="./assets/image1.png" alt="Image 1" width="600px;" height="340px;">
+						</div>
+						<div class="slide">
+							<img src="./assets/image2.png" alt="Image 2" width="600px;"  height="340px;">
+						</div>
+						<div class="slide">
+							<img src="./assets/image3.png" alt="Image 3" width="600px;"  height="340px;">
+						</div>
+						<div class="slide">
+							<img src="./assets/image4.png" alt="Image 4" width="600px;"  height="340px;">
+						</div>
+						&nbsp;&nbsp;&nbsp;
+						<button class="next" onclick="plusSlides(1)">&#10095;</button> 
+					</div>
+				</td>
+			</tr>
+		</center>
+	</table><br/>
+	<hr>
+	<table align=center width=1050px>
+		<center><h1>Paper and Bibtex</h1></center>
+		<tr>
+			<td><a href="./assets/MLLM_Projections.pdf"><img class="layered-paper-big" style="height:175px" src="./assets/screenshot.png"/></a></td>
+			<td>
+				<span style="font-size:12pt">Mysterious Projections: Multimodal LLMs Gain Domain-Specific Visual Capabilities Without Richer Cross-Modal Projections<br>
+				Gaurav Verma, Minje Choi, Kartik Sharma, Jamelle Watson-Daniels, Sejoon Oh, Srijan Kumar<br>
+				arXiv preprint 2402.NNNNN<br><br/>
+				webpage: <a href="https://github.com/claws-lab/multimodal-robustness">https://github.com/claws-lab/multimodal-robustness</a><br/>
+				arXiv: <a href="https://arxiv.org/abs/2402.NNNNN">https://arxiv.org/abs/2402.NNNNN</a></span><br><br/><br/>
+			</td>
+		</tr>
+	</table>
+
+	<table align=center width=600px>
+		<tr>
+			<td><span style="font-size:11pt">
+				<span style="font-size: 14pt">Bibtex:</span><br/><br/>
+				<left>
+				<code>
+					@article{verma2024mysterious,<br/>
+						title={Mysterious Projections: Multimodal LLMs Gain Domain-Specific Visual Capabilities Without Richer Cross-Modal Projections},<br/>
+						author={Verma, Gaurav and Choi, Minje and Sharma, Kartik and Watson-Daniels, Jamelle and Oh, Sejoon and Kumar, Srijan},<br/>
+						journal={arXiv preprint arXiv:2402.NNNNN},<br/>
+						year={2024}<br/>
+					}
+				</code>
+			</left>
+			</td>
+		</tr>
+	</table><br/>
+
+	<hr>
+	<br>
+
+	<table align=center width=900px>
+		<tr>
+			<td width=400px>
+				<center>
+					<span style="font-size: 10px;">
+					The template is built on top of the <a href="https://github.com/richzhang/webpage-template">one</a> build by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a>.
+					</span>
+				</center>
+			</td>
+		</tr>
+	</table>
+
+
+	<script src="./assets/script.js"></script>
+
+<br>
+</body>
+</html>
