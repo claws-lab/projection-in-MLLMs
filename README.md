@@ -16,7 +16,7 @@ and [Srijan Kumar](https://faculty.cc.gatech.edu/~srijan/)<sup>1</sup>
 # Code and Resources
 
 ### Setup
-The codebase is built on top of LLaVA's codebase. Clone the repository from here: https://github.com/haotian-liu/LLaVA inside `./experiments/` -- name the directory `llava-ft`. Then, follow the instruction provided in the original repository to setup the environment. Once you complete the setup, to verify the installation, check if you can check that everything works by running the `llava-v1.5-7b` model using the following command inside `./experiments/llava-ft` directory:
+The codebase is built on top of LLaVA's codebase. Clone the repository from here: https://github.com/haotian-liu/LLaVA inside `./experiments/` -- and name the directory `llava-ft`. Then, follow the instruction provided in the original repository to setup the environment. Once the setup is complete, to verify the installation, check if everything works by running the `llava-v1.5-7b` model using the following command inside `./experiments/llava-ft` directory:
 
 ```
 python -m llava.serve.cli \
@@ -25,7 +25,7 @@ python -m llava.serve.cli \
     --load-4bit
 ``` 
 
-Additionally, make sure that you download the `mm_projection.bin` corresponding to the llava-v1.5-7b model from the following link: https://huggingface.co/liuhaotian/llava-v1.5-7b/tree/main
+Additionally, make sure that the `mm_projection.bin` corresponding to the llava-v1.5-7b model is downloaded from the following link: https://huggingface.co/liuhaotian/llava-v1.5-7b/tree/main . To use any other LLaVa-1.5 variant, explore the Model Zoo in the original repository.
 
 ### Datasets
 We use $4$ different datasets in this work:
@@ -34,7 +34,7 @@ We use $4$ different datasets in this work:
 3. Dermatology: Download the DermaNet dataset from [here](https://www.kaggle.com/datasets/shubhamgoel27/dermnet) and use the standard train-test split.
 4. Humanitarian: Download the CrisisMMD dataset from [here](https://crisisnlp.qcri.org/crisismmd) (version v2.0) and use the standard train-test split.
 
-You can prepare the dataset for fine-tuning the llava models using the script: `./prepare_data/format_data_for_finetuning.py`.
+Prepare the dataset for fine-tuning the llava models using the script: `./prepare_data/format_data_for_finetuning.py`.
 This will output a CSV file containing the image paths and labels for the images within the specified directory. This CSV will be used for zero-shot inference with the CLIP model.
 Additionally, this script will output a JSON which will be used for fine-tuning the llava models.
 
@@ -48,9 +48,9 @@ The code for the experiments is available in the `experiments` directory. The `e
     ```
     bash experiments/llava-ft/scripts/v1_5/pretrain.sh
     ```
-    -  You should modify the relevant paths in the `pretrain.sh` script to point to the correct base models (`llava-v1.5-7b`), correct data_path (i.e., the JSON file obtained above), the image directory, and the output directory (which will store the ). The set hyper-parameter values will work seamlessly with 2 A100 (80 GB) GPUs. 
+    -  Modify the relevant paths in the `pretrain.sh` script to point to the correct base models (`llava-v1.5-7b`), correct data_path (i.e., the JSON file obtained above), the image directory, and the output directory (which will store the updated projector). The set hyper-parameter values will work seamlessly with 2 A100 (80 GB) GPUs. 
     - Once the `mm_projector.bin` is updated, it will be stored in the specified output directory. 
-    - Following this, you can merge the updated mm_projector.bin with your based models (i.e., `llava-v1.5-7b`) using the bash script inside `./experiments/llava-ft/merge_proj/`.
+    - Following this, the updated mm_projector.bin can be merged with your based model (i.e., `llava-v1.5-7b`) using the bash script inside `./experiments/llava-ft/merge_proj/`.
     ```
     bash ./merge_proj/update_model.sh <source_model_path> <updated_projector_path> <save_merged_model_path>
     ```
