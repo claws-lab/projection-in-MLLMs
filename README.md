@@ -54,14 +54,14 @@ The code for the experiments is available in the `experiments` directory. The `e
     ```
     bash ./merge_proj/update_model.sh <source_model_path> <updated_projector_path> <save_merged_model_path>
     ```
-    - Following these operations, you can run the zero-shot inference using the updated model (stored in `<save_merged_model_path>`) using the `cli.py` script inside `./experiments/llava-ft/llava/serve/`.
+    - Following these operations, run the zero-shot inference using the updated model (stored in `<save_merged_model_path>`) using the `cli.py` script inside `./experiments/llava-ft/llava/serve/`.
 
     - **Fine-tuning the entire model**. This corresponds to running the following command:
     ```
     bash experiments/llava-ft/scripts/v1_5/finetune_task.sh
     ```
-    -  You should modify the relevant paths in the `finetune_task.sh` script to point to the correct base models (`llava-v1.5-7b`), correct data_path (i.e., the JSON file obtained above), the image directory, and the output directory. The set hyper-parameter values will work seamlessly with 2 A100 (80 GB) GPUs. 
-    - Once the model is fine-tuned, you can run the zero-shot inference using the updated model using the `cli.py` script inside `./experiments/llava-ft/llava/serve/`. No need for merging the updated model with the base model in this case.
+    -  Modify the relevant paths in the `finetune_task.sh` script to point to the correct base models (`llava-v1.5-7b`), correct data_path (i.e., the JSON file obtained above), the image directory, and the output directory. The set hyper-parameter values will work seamlessly with 2 A100 (80 GB) GPUs. 
+    - Once the model is fine-tuned, run the zero-shot inference using the updated model using the `cli.py` script inside `./experiments/llava-ft/llava/serve/`. No need for merging the updated model with the base model in this case.
 3. `./experiments/estimte_richness/` contains the code for training MLPs on the pre- and post- projection representations of the images. Adjust the hyper-parameters in the `train_mlp.py` and run the script to train the MLPs.
 
 ### Citation
@@ -74,7 +74,6 @@ If you use this codebase, please cite our paper:
   year={2024}
 }
 ```
-
 
 ###  Acknowledgements
 The codebase is built on top of LLaVA's codebase. We thank the authors for making the codebase publicly available. Relevant citations:
