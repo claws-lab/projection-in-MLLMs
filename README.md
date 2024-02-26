@@ -66,7 +66,7 @@ The code for the experiments is available in the `experiments` directory. The `e
 
 ### Citation
 If you use this codebase, please cite our paper:
-```
+```bibtex
 @article{verma2024mysterious,
   title={Mysterious Projections: Multimodal LLMs Gain Domain-Specific Visual Capabilities Without Richer Cross-Modal Projections},
   author={Verma, Gaurav and Choi, Minje and Sharma, Kartik and Watson-Daniels, Jamelle and Oh, Sejoon and Kumar, Srijan},
@@ -77,15 +77,15 @@ If you use this codebase, please cite our paper:
 
 ###  Acknowledgements
 The codebase is built on top of LLaVA's codebase. We thank the authors for making the codebase publicly available. Relevant citations:
-```
-
+```bibtex
 @misc{liu2023improvedllava,
       title={Improved Baselines with Visual Instruction Tuning}, 
       author={Liu, Haotian and Li, Chunyuan and Li, Yuheng and Lee, Yong Jae},
       publisher={arXiv:2310.03744},
       year={2023},
 }
-
+```
+```bibtex
 @misc{liu2023llava,
       title={Visual Instruction Tuning}, 
       author={Liu, Haotian and Li, Chunyuan and Wu, Qingyang and Lee, Yong Jae},
