@@ -1,5 +1,5 @@
 
-# Cross-Modal Projection in Multimodal LLMs Doesn't Really Project Visual Attributes to Textual Space   
+# (ACL 2024) Cross-Modal Projection in Multimodal LLMs Doesn't Really Project Visual Attributes to Textual Space   
 *Paper*: [https://arxiv.org/abs/2402.16832](https://arxiv.org/abs/2402.16832)  
 *Webpage*: [https://claws-lab.github.io/projection-in-MLLMs/](https://claws-lab.github.io/projection-in-MLLMs/)  
 *GitHub*: [https://github.com/claws-lab/projection-in-MLLMs](https://github.com/claws-lab/projection-in-MLLMs/)   
