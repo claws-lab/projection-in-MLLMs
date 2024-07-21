@@ -1,5 +1,5 @@
 
-# Mysterious Projections: Multimodal LLMs Gain Domain-Specific Visual Capabilities *Without* Richer Cross-Modal Projections   
+# Cross-Modal Projection in Multimodal LLMs Doesn't Really Project Visual Attributes to Textual Space   
 *Paper*: [https://arxiv.org/abs/2402.16832](https://arxiv.org/abs/2402.16832)  
 *Webpage*: [https://claws-lab.github.io/projection-in-MLLMs/](https://claws-lab.github.io/projection-in-MLLMs/)  
 *GitHub*: [https://github.com/claws-lab/projection-in-MLLMs](https://github.com/claws-lab/projection-in-MLLMs/)   
@@ -67,10 +67,10 @@ The code for the experiments is available in the `experiments` directory. The `e
 ### Citation
 If you use this codebase, please cite our paper:
 ```bibtex
-@article{verma2024mysterious,
-  title={Mysterious Projections: Multimodal LLMs Gain Domain-Specific Visual Capabilities Without Richer Cross-Modal Projections},
+@article{verma2024crossmodalprojection,
+  title={Cross-Modal Projection in Multimodal LLMs Doesn't Really Project Visual Attributes to Textual Space},
   author={Verma, Gaurav and Choi, Minje and Sharma, Kartik and Watson-Daniels, Jamelle and Oh, Sejoon and Kumar, Srijan},
-  journal={arXiv preprint arXiv:2402.16832},
+  journal={62nd Annual Meeting of the Association for Computational Linguistics (ACL)},
   year={2024}
 }
 ```
