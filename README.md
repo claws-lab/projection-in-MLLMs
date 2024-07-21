@@ -70,7 +70,7 @@ If you use this codebase, please cite our paper:
 @article{verma2024crossmodalprojection,
   title={Cross-Modal Projection in Multimodal LLMs Doesn't Really Project Visual Attributes to Textual Space},
   author={Verma, Gaurav and Choi, Minje and Sharma, Kartik and Watson-Daniels, Jamelle and Oh, Sejoon and Kumar, Srijan},
-  journal={62nd Annual Meeting of the Association for Computational Linguistics (ACL)},
+  publisher={62nd Annual Meeting of the Association for Computational Linguistics (ACL)},
   year={2024}
 }
 ```
